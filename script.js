@@ -1,25 +1,29 @@
-let hello = alert('Привет!');
+//let hello = alert('Привет!');
 
-const questionDifficulty = {
+let  num = 0;
+let score;
+
+const question1 = {
     question: 'Какую сложность игры ты выберешь?',
     answer: 'легкая',
     correctAnswer: 'средняя'
 };
 
-const questionGame = {
-    question: 'ты любишь видеоигры?',
-    answer: 'нет',
-    correctAnswer: 'да'
+const question2 = {
+    question: 'Как у тебя дела?'
 };
 
-const questionAge = {
-    question: 'How old are you?',
-    answer: '7',
-    correctAnswer: '18'
+const question3 = {
+    question: 'Сколько тебе лет?'
+};
+const question4 = {
+    question: 'Какое у тебя хобби?'
 };
 
-const questionName = {
-    question: 'What is your name?',
-    answer: 'Elizaveta',
-    correctAnswer:'Elizaveta'
-};
+let allQestions = [Array(question1), Array(question2), Array(question3), Array(question4)];
+
+allQestions.forEach((question, i) => {if (i % 2 != 0){question.correctAnswer = 'c'}});
+
+let result = allQestions.filter(question => Object.values(question).some(correctAnswer => correctAnswer == 'c'));
+
+console.log(result)
